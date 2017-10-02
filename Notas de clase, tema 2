@@ -1,0 +1,36 @@
+Notas de clase de AC:
+
+Diapositiva 67:
+
+  Prestaciones (p) = "W / T_p"
+  Prestaciones (1) = "W / T_1"
+  S(p) = Prestaciones(p)/Prestaciones(1) =
+    = (W/T_p)/(W/T_1) = T_1/T_p
+    T_1 = T_s
+
+  T_s = No paralelizable
+  T_O = Tiempo de overhead/sobrecarga -> tiempo que esperan unos procesadores
+    a otros
+  T_C = Tiempo de cómputo
+  T_p = Tiempo en paralelo
+
+Diapo 68:
+  (a) -> (f=0 en la Ley de Andhal)
+    T_p(p) = T_s/p = T_c(p) + T_O(p), con T_O(p) = 0. Luego T_p = T_c
+  (b) -> T_p(p) = T_s * f + (a-f) * T_s/p + 0
+    S_p = T_s / (T_s*f + T_s * (1-f)/p ) = 1/(f + (1-f)/p),
+    Cuando p->inf. --> S_p = 1/f
+  (c) -> T_p(p) = T_s * f + T_s * (1-f)/p
+    S_p es igual que en el caso anterior. Solamente puede tener hasta n
+    p=n --> 1/( f + (1-f)/n)
+  (d) -> T_p(p) = T_s * f + T_s * (1-f)/p + T_O(p)
+      pudiendo p crecer sin limite y T_O depende de p
+    T_s / (T_s*f + T_s * (1-f)/p + T_O(p)) =
+    = 1 / (f + (1-f)/p + T_O(p)/T_s) = 1 / (f + (1-f)/p + A * p)
+      A = k / T_s, k constante cualquiera
+    El caso es que cuando p->inf. --> S(p) tiende a 0 (no tenemos ganancia)
+
+Diapo 75:
+  T_p = constante
+  T_s = f_g * T_p + (1-f_g)*T_p * p
+  S(p) = f_g * T_p + (1-f_g)*T_p * p / T_p = f + p*(a-f)

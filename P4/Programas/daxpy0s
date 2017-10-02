@@ -1,0 +1,161 @@
+	.file	"daxpy.cpp"
+	.globl	x
+	.bss
+	.align 32
+	.type	x, @object
+	.size	x, 8388608
+x:
+	.zero	8388608
+	.globl	y
+	.align 32
+	.type	y, @object
+	.size	y, 8388608
+y:
+	.zero	8388608
+	.globl	r
+	.align 32
+	.type	r, @object
+	.size	r, 8388608
+r:
+	.zero	8388608
+	.section	.rodata
+	.align 8
+.LC4:
+	.string	"Primer valor: %0.1f \t \303\232ltimo valor: %0.1f \n"
+	.align 8
+.LC5:
+	.string	"\n Tiempo de ejecuci\303\263n(s): %11.9f\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB2:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$112, %rsp
+	movl	%edi, -84(%rbp)
+	movq	%rsi, -96(%rbp)
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movsd	.LC0(%rip), %xmm0
+	movsd	%xmm0, -64(%rbp)
+	movsd	.LC1(%rip), %xmm0
+	movsd	%xmm0, y(%rip)
+	movsd	y(%rip), %xmm0
+	movsd	%xmm0, x(%rip)
+	movl	$1, -72(%rbp)
+.L3:
+	cmpl	$1048575, -72(%rbp)
+	jg	.L2
+	movl	-72(%rbp), %eax
+	subl	$1, %eax
+	cltq
+	movsd	x(,%rax,8), %xmm1
+	movsd	.LC2(%rip), %xmm0
+	xorpd	%xmm1, %xmm0
+	movl	-72(%rbp), %eax
+	cltq
+	movsd	%xmm0, x(,%rax,8)
+	movl	-72(%rbp), %eax
+	cltq
+	movsd	x(,%rax,8), %xmm0
+	movl	-72(%rbp), %eax
+	cltq
+	movsd	%xmm0, y(,%rax,8)
+	addl	$1, -72(%rbp)
+	jmp	.L3
+.L2:
+	leaq	-48(%rbp), %rax
+	movq	%rax, %rsi
+	movl	$0, %edi
+	call	clock_gettime
+	movl	$1, -68(%rbp)
+.L5:
+	cmpl	$1048576, -68(%rbp)
+	jg	.L4
+	movl	-68(%rbp), %eax
+	cltq
+	movsd	x(,%rax,8), %xmm0
+	mulsd	-64(%rbp), %xmm0
+	movl	-68(%rbp), %eax
+	cltq
+	movsd	y(,%rax,8), %xmm1
+	addsd	%xmm1, %xmm0
+	movl	-68(%rbp), %eax
+	cltq
+	movsd	%xmm0, r(,%rax,8)
+	addl	$1, -68(%rbp)
+	jmp	.L5
+.L4:
+	leaq	-32(%rbp), %rax
+	movq	%rax, %rsi
+	movl	$0, %edi
+	call	clock_gettime
+	movq	-32(%rbp), %rdx
+	movq	-48(%rbp), %rax
+	subq	%rax, %rdx
+	movq	%rdx, %rax
+	pxor	%xmm1, %xmm1
+	cvtsi2sdq	%rax, %xmm1
+	movq	-24(%rbp), %rdx
+	movq	-40(%rbp), %rax
+	subq	%rax, %rdx
+	movq	%rdx, %rax
+	pxor	%xmm0, %xmm0
+	cvtsi2sdq	%rax, %xmm0
+	movsd	.LC3(%rip), %xmm2
+	divsd	%xmm2, %xmm0
+	addsd	%xmm1, %xmm0
+	movsd	%xmm0, -56(%rbp)
+	movsd	r+8388600(%rip), %xmm0
+	movq	r(%rip), %rax
+	movapd	%xmm0, %xmm1
+	movq	%rax, -104(%rbp)
+	movsd	-104(%rbp), %xmm0
+	movl	$.LC4, %edi
+	movl	$2, %eax
+	call	printf
+	movq	-56(%rbp), %rax
+	movq	%rax, -104(%rbp)
+	movsd	-104(%rbp), %xmm0
+	movl	$.LC5, %edi
+	movl	$1, %eax
+	call	printf
+	movl	$0, %eax
+	movq	-8(%rbp), %rcx
+	xorq	%fs:40, %rcx
+	je	.L7
+	call	__stack_chk_fail
+.L7:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2:
+	.size	main, .-main
+	.section	.rodata
+	.align 8
+.LC0:
+	.long	2576980378
+	.long	1072798105
+	.align 8
+.LC1:
+	.long	0
+	.long	1074003968
+	.align 16
+.LC2:
+	.long	0
+	.long	-2147483648
+	.long	0
+	.long	0
+	.align 8
+.LC3:
+	.long	0
+	.long	1104006501
+	.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609"
+	.section	.note.GNU-stack,"",@progbits

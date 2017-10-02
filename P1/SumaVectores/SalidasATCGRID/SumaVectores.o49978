@@ -1,0 +1,11 @@
+Id. usuario del trabajo: E2estudiante2
+Id. del trabajo: 49978.atcgrid
+Nombre  del trabajo especificado por usuario: SumaVectores
+Nodo que ejecuta qsub: atcgrid
+Directorio en el que se ha ejecutado qsub: /home/E2estudiante2
+Cola: ac
+Nodos asignados al trabajo:
+Para N = 10:
+Tiempo(seg.):0.000003322 	/ Tamaño Vectores:10 	/V1[0]+V2[0]=V3[0](1.000000+1.000000=2.000000) / /V1[9]+V2[9]=V3[9](1.900000+0.100000=2.000000) /
+Para N = 10M:
+Tiempo(seg.):0.075242381 	/ Tamaño Vectores:10000000 	/V1[0]+V2[0]=V3[0](1000000.000000+1000000.000000=2000000.000000) / /V1[9999999]+V2[9999999]=V3[9999999](1999999.900000+0.100000=2000000.000000) /

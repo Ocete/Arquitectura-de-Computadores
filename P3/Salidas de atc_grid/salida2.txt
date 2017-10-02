@@ -1,0 +1,63 @@
+schedueling static -- Chunk por defecto -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.453910425
+
+schedueling dynamic -- Chunk por defecto -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.395356335
+
+schedueling guided -- Chunk por defecto -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.443649250
+
+schedueling static -- Chunk 1 -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.417107388
+
+schedueling dynamic -- Chunk 1 -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.423722947
+
+schedueling guided -- Chunk 1 -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.429010721
+
+schedueling static -- Chunk 64 -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.524731778
+
+schedueling dynamic -- Chunk 64 -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.395849186
+
+schedueling guided -- Chunk 64 -- 15360 iteraciones:
+
+ Resultado:
+Primer valor: 2.8 	 Último valor: 0.0 
+
+ Tiempo de ejecución(s): 0.381089460
+

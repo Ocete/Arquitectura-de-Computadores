@@ -1,0 +1,56 @@
+Componentes del vector: 65536
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.000s
+Componentes del vector: 131072
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.000s
+Componentes del vector: 262144
+
+real	0m0.670s
+user	0m0.000s
+sys	0m0.004s
+Componentes del vector: 524288
+
+real	0m0.020s
+user	0m0.000s
+sys	0m0.004s
+Componentes del vector: 1048576
+
+real	0m0.014s
+user	0m0.004s
+sys	0m0.008s
+Componentes del vector: 2097152
+
+real	0m0.019s
+user	0m0.016s
+sys	0m0.000s
+Componentes del vector: 4194304
+
+real	0m0.040s
+user	0m0.036s
+sys	0m0.000s
+Componentes del vector: 8388608
+
+real	0m0.080s
+user	0m0.060s
+sys	0m0.020s
+Componentes del vector: 16777216
+
+real	0m0.144s
+user	0m0.108s
+sys	0m0.032s
+Componentes del vector: 33554432
+
+real	0m0.288s
+user	0m0.224s
+sys	0m0.060s
+Componentes del vector: 67108864
+
+real	0m0.291s
+user	0m0.228s
+sys	0m0.060s
+

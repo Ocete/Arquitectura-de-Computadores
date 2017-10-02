@@ -1,0 +1,41 @@
+Id. usuario del trabajo: E2estudiante2
+Id. del trabajo: 42360.atcgrid
+Nombre  del trabajo especificado por usuario: helloomp
+Nodo que ejecuta qsub: atcgrid
+Cola: ac
+Nodos asignados al trabajo:
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+atcgrid2
+Nº de threads inicial 12
+Directorio de trabajo /home/E2estudiante2
+
+Para 12 threads:
+8:!!!Hello world!!!3:!!!Hello world!!!7:!!!Hello world!!!11:!!!Hello world!!!2:!!!Hello world!!!0:!!!Hello world!!!6:!!!Hello world!!!5:!!!Hello world!!!4:!!!Hello world!!!9:!!!Hello world!!!10:!!!Hello world!!!1:!!!Hello world!!!
+Para 6 threads:
+3:!!!Hello world!!!0:!!!Hello world!!!5:!!!Hello world!!!4:!!!Hello world!!!1:!!!Hello world!!!2:!!!Hello world!!!
+Para 3 threads:
+1:!!!Hello world!!!0:!!!Hello world!!!2:!!!Hello world!!!
+Para 1 threads:
+0:!!!Hello world!!!

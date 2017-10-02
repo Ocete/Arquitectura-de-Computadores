@@ -1,0 +1,28 @@
+Para ver el dir en el que estamos:
+pud en la local
+lpud en la grande
+
+Para moverse:
+cd en la local
+lcd en la grande
+
+Para mover ficheros:
+put <nombre_fichero> mete un archivo del dir actual(maquina local) al dir actual (maquina grande)
+get
+
+
+pbsnodes: da informacion del nodo
+qsub: mete un trabajo en la cola. dos ficheros de salida:
+  stdin.oX
+  stdo.
+qstat: Chequea trabajos de la cola (si ha terminado, no esta en cola (meme))
+  Posibles estados:
+    Q - Qeued
+    E/R - ejecución
+    C - Completado (a veces se queda en cola cuando ya esta terminado)
+qdel <nº trabajo>: sacamos un trabajo de la cola
+
+Secure Copy, en el ordenador local
+scp <fichero de origen> <fichero de destino>
+fichero de origen = usuario@atcgrid.ugr.es:home/usuario/AC/...
+fichero destino = . (donde estas)

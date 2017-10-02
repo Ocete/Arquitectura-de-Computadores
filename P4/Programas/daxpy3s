@@ -1,0 +1,157 @@
+	.file	"daxpy.cpp"
+	.section	.rodata.str1.8,"aMS",@progbits,1
+	.align 8
+.LC5:
+	.string	"Primer valor: %0.1f \t \303\232ltimo valor: %0.1f \n"
+	.align 8
+.LC6:
+	.string	"\n Tiempo de ejecuci\303\263n(s): %11.9f\n"
+	.section	.text.unlikely,"ax",@progbits
+.LCOLDB7:
+	.section	.text.startup,"ax",@progbits
+.LHOTB7:
+	.p2align 4,,15
+	.globl	main
+	.type	main, @function
+main:
+.LFB45:
+	.cfi_startproc
+	subq	$72, %rsp
+	.cfi_def_cfa_offset 80
+	movl	$y+8, %edx
+	movl	$x+8388608, %ecx
+	movsd	.LC0(%rip), %xmm0
+	movsd	.LC1(%rip), %xmm1
+	movsd	%xmm0, y(%rip)
+	movsd	%xmm0, x(%rip)
+	movq	%fs:40, %rax
+	movq	%rax, 56(%rsp)
+	xorl	%eax, %eax
+	movl	$x+8, %eax
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	xorpd	%xmm1, %xmm0
+	addq	$8, %rax
+	addq	$8, %rdx
+	movsd	%xmm0, -8(%rax)
+	movsd	%xmm0, -8(%rdx)
+	cmpq	%rax, %rcx
+	jne	.L2
+	leaq	16(%rsp), %rsi
+	xorl	%edi, %edi
+	call	clock_gettime
+	movsd	.LC2(%rip), %xmm2
+	xorl	%eax, %eax
+	movsd	x+8(%rip), %xmm0
+	movapd	.LC3(%rip), %xmm1
+	mulsd	%xmm2, %xmm0
+	addsd	y+8(%rip), %xmm0
+	movsd	%xmm0, r+8(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movapd	x+16(%rax), %xmm0
+	addq	$16, %rax
+	mulpd	%xmm1, %xmm0
+	addpd	y(%rax), %xmm0
+	movaps	%xmm0, r(%rax)
+	cmpq	$8388592, %rax
+	jne	.L3
+	mulsd	x+8388608(%rip), %xmm2
+	leaq	32(%rsp), %rsi
+	xorl	%edi, %edi
+	addsd	y+8388608(%rip), %xmm2
+	movsd	%xmm2, r+8388608(%rip)
+	call	clock_gettime
+	movq	40(%rsp), %rax
+	pxor	%xmm2, %xmm2
+	subq	24(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	movsd	r+8388600(%rip), %xmm1
+	movl	$.LC5, %esi
+	movl	$1, %edi
+	cvtsi2sdq	%rax, %xmm2
+	movq	32(%rsp), %rax
+	subq	16(%rsp), %rax
+	cvtsi2sdq	%rax, %xmm0
+	movl	$2, %eax
+	divsd	.LC4(%rip), %xmm2
+	addsd	%xmm0, %xmm2
+	movsd	r(%rip), %xmm0
+	movsd	%xmm2, 8(%rsp)
+	call	__printf_chk
+	movsd	8(%rsp), %xmm2
+	movl	$1, %edi
+	movl	$.LC6, %esi
+	movl	$1, %eax
+	movapd	%xmm2, %xmm0
+	call	__printf_chk
+	xorl	%eax, %eax
+	movq	56(%rsp), %rdi
+	xorq	%fs:40, %rdi
+	jne	.L9
+	addq	$72, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L9:
+	.cfi_restore_state
+	call	__stack_chk_fail
+	.cfi_endproc
+.LFE45:
+	.size	main, .-main
+	.section	.text.unlikely
+.LCOLDE7:
+	.section	.text.startup
+.LHOTE7:
+	.globl	r
+	.bss
+	.align 32
+	.type	r, @object
+	.size	r, 8388608
+r:
+	.zero	8388608
+	.globl	y
+	.align 32
+	.type	y, @object
+	.size	y, 8388608
+y:
+	.zero	8388608
+	.globl	x
+	.align 32
+	.type	x, @object
+	.size	x, 8388608
+x:
+	.zero	8388608
+	.section	.rodata.cst8,"aM",@progbits,8
+	.align 8
+.LC0:
+	.long	0
+	.long	1074003968
+	.section	.rodata.cst16,"aM",@progbits,16
+	.align 16
+.LC1:
+	.long	0
+	.long	-2147483648
+	.long	0
+	.long	0
+	.section	.rodata.cst8
+	.align 8
+.LC2:
+	.long	2576980378
+	.long	1072798105
+	.section	.rodata.cst16
+	.align 16
+.LC3:
+	.long	2576980378
+	.long	1072798105
+	.long	2576980378
+	.long	1072798105
+	.section	.rodata.cst8
+	.align 8
+.LC4:
+	.long	0
+	.long	1104006501
+	.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609"
+	.section	.note.GNU-stack,"",@progbits
